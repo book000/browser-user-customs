@@ -1,0 +1,26 @@
+/* ==UserStyle==
+@name           Delete "Address" from google.com
+@namespace      tomacheese.com
+@version        1.0.0
+@description    Google検索結果などに表示される現在地情報を非表示にする
+@author         Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
+@homepageURL    https://github.com/book000/browser-user-customs
+@supportURL     https://github.com/book000/browser-user-customs/issues
+@updateURL      https://raw.githubusercontent.com/book000/browser-user-customs/master/css/google.co.jp/delete-address.user.css
+@license        MIT License
+==/UserStyle== */
+
+@-moz-document domain("google.com") {
+  #swml {
+    display: none !important; /* 最下部の現在地情報 */
+  }
+  #taw {
+    display: none !important; /* 検索に関する現在地情報 */
+  }
+  .zehhyb {
+    display: none !important; /* ショッピングタブでの現在地情報 */
+  }
+  div[jsmodel="QPRQHf"] {
+    display: none !important; /* 検索結果に関する場所情報 */
+  }
+}
