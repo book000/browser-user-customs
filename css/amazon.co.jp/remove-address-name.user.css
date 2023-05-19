@@ -1,0 +1,32 @@
+/* ==UserStyle==
+@name           Delete "Address" and "Name" from Amazon.co.jp
+@namespace      tomacheese.com
+@version        1.0.2
+@description    Chrome/Firefoxの拡張機能であるStylusを使用して、Amazon上に表示される「住所情報」と「登録名情報」を表示させないCSS
+@author         Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
+@homepageURL    https://github.com/book000/browser-user-customs
+@supportURL     https://github.com/book000/browser-user-customs/issues
+@updateURL      https://raw.githubusercontent.com/book000/browser-user-customs/master/css/amazon.co.jp/remove-address-name.user.css
+@license        MIT License
+==/UserStyle== */
+
+@-moz-document domain("amazon.co.jp") {
+  #nav-global-location-slot {
+    display: none !important; /* 上部ナビゲーションバーの住所情報 */
+  }
+  #nav-link-accountList .nav-line-1-container .nav-line-1 {
+    display: none !important; /* 上部ナビゲーションバーの登録名情報 */
+  }
+  .hud-profile-greeting h2.a-spacing-none {
+    display: none !important; /* トップページの「ようこそ」に表示される登録名情報 */
+  }
+  #glowContextualIngressPt_feature_div {
+    display: none !important; /* 商品ページにおけるお届け先の住所情報 */
+  }
+  #ordersContainer .recipient {
+    display: none !important; /* 注文履歴におけるお届け先の住所情報 */
+  }
+  #contextualIngressPtLabel_deliveryShortLine {
+    display: none !important; /* 出品者販売の場合の商品ページにおけるお届け先の住所情報 */
+  }
+}
