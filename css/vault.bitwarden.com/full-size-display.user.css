@@ -1,0 +1,22 @@
+/* ==UserStyle==
+@name           Full size display on vault.bitwarden.com
+@namespace      tomacheese.com
+@version        1.0.1
+@updateURL      https://gist.github.com/book000/894207763314aefc0ac0e7f6ed3dc857/raw/bitwarden-full-width.user.css
+@description    Bitwardenでフルサイズ表示する（プレミアムへの広告も消す）
+@author         Tomachi (book000)
+==/UserStyle== */
+@-moz-document domain("vault.bitwarden.com") {
+  .container {
+    width: 100% !important;
+  }
+
+  div.col-3:has(a[routerlink="/settings/subscription/premium"]) {
+    display: none !important;
+  }
+
+  div.col-6:has(app-vault-header) {
+    flex: 0 0 75% !important;
+    max-width: 75% !important;
+  }
+}
