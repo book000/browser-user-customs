@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Amazon広告系アイテム半透明化
+// @name         Advertising items semi-transparent on amazon.co.jp
 // @namespace    tomacheese.com
 // @version      1.0.0
 // @description  Amazonで広告系アイテムを半透明化する。

@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Show actual price in Yodobashi
+// @name         Show actual price in yodobashi.co.jp
 // @namespace    tomacheese.com
 // @version      1.0.0
 // @description  ヨドバシの商品ページで販売価格からポイントを引いた実質価格を表示する
