@@ -1,0 +1,21 @@
+/* ==UserStyle==
+@name           Avoid scroll disable on emojipedia.org
+@namespace      tomacheese.com
+@version        1.0.0
+@description    emojipedia.org のスクロール無効化を回避
+@author         Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
+@homepageURL    https://github.com/book000/browser-user-customs
+@supportURL     https://github.com/book000/browser-user-customs/issues
+@updateURL      https://raw.githubusercontent.com/book000/browser-user-customs/master/css/emojipedia.org/avoid-scroll-disable.user.css
+@license        MIT License
+==/UserStyle== */
+
+@-moz-document domain("emojipedia.org") {
+  html {
+    overflow: auto !important;
+  }
+
+  body {
+    overflow: auto !important;
+  }
+}
