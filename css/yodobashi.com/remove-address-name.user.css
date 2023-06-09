@@ -1,0 +1,44 @@
+/* ==UserStyle==
+@name           Delete "Address" and "Name" on yodobashi.com
+@namespace      tomacheese.com
+@version        1.0.0
+@description    ヨドバシ上に表示される「住所情報」と「登録名情報」などを表示させない
+@author         Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
+@homepageURL    https://github.com/book000/browser-user-customs
+@supportURL     https://github.com/book000/browser-user-customs/issues
+@updateURL      https://raw.githubusercontent.com/book000/browser-user-customs/master/css/yodobashi.com/remove-address-name.user.css
+@license        MIT License
+==/UserStyle== */
+
+@-moz-document domain("yodobashi.com") {
+  #logininfo,
+  #syszipnoinfo,
+  #expService {
+    display: none !important;
+  }
+
+  .pNameInfoBottom > strong:not([class])::before {
+    font-size: 12px;
+    content: "******";
+  }
+  .pNameInfoBottom > strong:not([class]) {
+    font-size: 0;
+  }
+  .js_detail_address > span::before {
+    font-size: 12px;
+    content: "******";
+  }
+  .js_detail_address > span {
+    font-size: 0;
+  }
+  .deliveryInfo > span > span > span:not([class])::before {
+    font-size: 12px;
+    content: "******";
+  }
+  .deliveryInfo > span > span > span:not([class]) {
+    font-size: 0;
+  }
+  .areaLimitationTextArea_text {
+    display: none !important;
+  }
+}
