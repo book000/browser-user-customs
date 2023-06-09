@@ -1,0 +1,17 @@
+/* ==UserStyle==
+@name           Remove Ads on Rakuten Search
+@namespace      tomacheese.com
+@version        1.0.0
+@description    楽天検索の広告を削除します。
+@author         Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
+@homepageURL    https://github.com/book000/browser-user-customs
+@supportURL     https://github.com/book000/browser-user-customs/issues
+@updateURL      https://raw.githubusercontent.com/book000/browser-user-customs/master/css/search.rakuten.co.jp/remove-ads.user.css
+@license        MIT License
+==/UserStyle== */
+
+@-moz-document domain("search.rakuten.co.jp") {
+  div[data-track-type="cpc"] {
+    display: none !important;
+  }
+}
