@@ -1,0 +1,17 @@
+/* ==UserStyle==
+@name           Resolve an issue with Chinese fonts being used on ticktick.com
+@namespace      tomacheese.com
+@version        1.0.0
+@description    ticktick.com で中華フォントが使われてしまう問題を解決する
+@author         Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
+@homepageURL    https://github.com/book000/browser-user-customs
+@supportURL     https://github.com/book000/browser-user-customs/issues
+@updateURL      https://raw.githubusercontent.com/book000/browser-user-customs/master/css/ticktick.com/fix-chinese-font.user.css
+@license        MIT License
+==/UserStyle== */
+
+@-moz-document domain("ticktick.com") {
+  * {
+    font-family: sans-serif, Meiryo !important;
+  }
+}
