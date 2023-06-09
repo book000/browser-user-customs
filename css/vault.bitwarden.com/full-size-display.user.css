@@ -1,11 +1,15 @@
 /* ==UserStyle==
 @name           Full size display on vault.bitwarden.com
 @namespace      tomacheese.com
-@version        1.0.1
-@updateURL      https://gist.github.com/book000/894207763314aefc0ac0e7f6ed3dc857/raw/bitwarden-full-width.user.css
+@version        1.0.0
 @description    Bitwardenでフルサイズ表示する（プレミアムへの広告も消す）
-@author         Tomachi (book000)
+@author         Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
+@homepageURL    https://github.com/book000/browser-user-customs
+@supportURL     https://github.com/book000/browser-user-customs/issues
+@updateURL      https://raw.githubusercontent.com/book000/browser-user-customs/master/css/vault.bitwarden.com/full-size-display.user.css
+@license        MIT License
 ==/UserStyle== */
+
 @-moz-document domain("vault.bitwarden.com") {
   .container {
     width: 100% !important;
