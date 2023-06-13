@@ -49,7 +49,7 @@ function getParentVersion(baseSha, path) {
     const cmd = `git --no-pager show ${baseSha}:${path}`;
     const stdout = execSync(cmd, { encoding: "utf8" });
     const { meta } = userScriptParser(stdout);
-    return meta.version;
+    return meta.version[0];
   } catch (e) {
     console.error("Failed to get parent version:", e.message);
     return null;
@@ -119,22 +119,20 @@ function validateValues(path, metadata) {
 function checkVersion(path, meta) {
   const baseSha = process.env.BASE_SHA;
   const parentVersion = getParentVersion(baseSha, path);
-  const currentVersion = meta.version;
+  const currentVersion = meta.version[0];
 
   if (!parentVersion || !currentVersion) {
     return;
   }
 
-  if (parentVersion.trim() !== currentVersion.trim()) {
+  if (parentVersion !== currentVersion) {
     console.log(
-      `${path}: version updated (${currentVersion.trim()} -> ${parentVersion.trim()})`
+      `${path}: version updated (${currentVersion} -> ${parentVersion})`
     );
     return;
   }
 
-  throw new Error(
-    `version must be updated (current: ${currentVersion.trim()})`
-  );
+  throw new Error(`version must be updated (current: ${currentVersion})`);
 }
 
 function main() {
