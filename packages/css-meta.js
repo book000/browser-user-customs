@@ -1,5 +1,6 @@
 const userCssMeta = require("usercss-meta");
 const fs = require("fs");
+const { execSync } = require("child_process");
 
 function parse(path) {
   const data = fs.readFileSync(path, "utf8");
@@ -22,7 +23,39 @@ function getCssFiles(path) {
   return cssFiles;
 }
 
-function check(path, result) {
+function getUpdatedFiles(directory) {
+  try {
+    const baseSha = process.env.BASE_SHA;
+    if (!baseSha || baseSha.length === 0) {
+      return [];
+    }
+
+    const cmd = `git diff --name-only ${baseSha} HEAD`;
+    const stdout = execSync(cmd, { encoding: "utf8" });
+    return stdout
+      .split("\n")
+      .filter(
+        (file) => file.startsWith(directory) && file.endsWith(".user.css")
+      );
+  } catch (e) {
+    console.error("Failed to get updated files:", e);
+    return [];
+  }
+}
+
+function getParentVersion(baseSha, path) {
+  try {
+    const cmd = `git --no-pager show ${baseSha}:${path}`;
+    const stdout = execSync(cmd, { encoding: "utf8" });
+    const meta = userCssMeta.parse(stdout);
+    return meta.version;
+  } catch (e) {
+    console.error("Failed to get parent version:", e.message);
+    return null;
+  }
+}
+
+function validateValues(path, result) {
   const metadata = result.metadata;
   // 必須要件
   const required = [
@@ -74,19 +107,58 @@ function check(path, result) {
   }
 }
 
+function checkVersion(path, meta) {
+  const baseSha = process.env.BASE_SHA;
+  const parentVersion = getParentVersion(baseSha, path);
+  const currentVersion = meta.version;
+
+  if (!parentVersion || !currentVersion) {
+    return;
+  }
+
+  if (parentVersion !== currentVersion) {
+    console.log(
+      `${path}: version updated (${currentVersion} -> ${parentVersion})`
+    );
+    return;
+  }
+
+  throw new Error(`version must be updated (current: ${currentVersion})`);
+}
+
 function main() {
   const cssFiles = getCssFiles("./css/");
 
+  const metas = {};
+
   let errors = 0;
   for (const cssFile of cssFiles) {
+    console.log(`Validating ${cssFile}...`);
+    const key = cssFile.replace("./", "");
     const path = cssFile.replace("./css/", "");
     try {
-      console.log(`Parsing ${path}...`);
       const result = parse(cssFile);
-      console.log(`Checking ${path}...`);
-      check(path, result);
+      metas[key] = result;
+
+      validateValues(path, result);
     } catch (e) {
       console.error(`Failed to check ${path}: ${e.message}`);
+      errors++;
+    }
+  }
+
+  const updatedFiles = getUpdatedFiles("css/");
+  for (const updatedFile of updatedFiles) {
+    console.log(`Check versioning ${updatedFile}...`);
+    try {
+      const meta = metas[updatedFile];
+      if (!meta) {
+        throw new Error("meta not found");
+      }
+
+      checkVersion(updatedFile, meta);
+    } catch (e) {
+      console.error(`Failed to check ${updatedFile}: ${e.message}`);
       errors++;
     }
   }
