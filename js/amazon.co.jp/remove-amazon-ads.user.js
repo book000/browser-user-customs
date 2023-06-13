@@ -16,7 +16,6 @@
 
 (function () {
   "use strict";
-
   function run() {
     const opacity = 0; // .5で半透明、0で透明(消す)
 
