@@ -125,14 +125,16 @@ function checkVersion(path, meta) {
     return;
   }
 
-  if (parentVersion !== currentVersion) {
+  if (parentVersion.trim() !== currentVersion.trim()) {
     console.log(
-      `${path}: version updated (${currentVersion} -> ${parentVersion})`
+      `${path}: version updated (${currentVersion.trim()} -> ${parentVersion.trim()})`
     );
     return;
   }
 
-  throw new Error(`version must be updated (current: ${currentVersion})`);
+  throw new Error(
+    `version must be updated (current: ${currentVersion.trim()})`
+  );
 }
 
 function main() {
