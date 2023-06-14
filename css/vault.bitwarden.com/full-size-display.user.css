@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Full size display on vault.bitwarden.com
 @namespace      tomacheese.com
-@version        1.0.0
+@version        1.0.1
 @description    Bitwardenでフルサイズ表示する（プレミアムへの広告も消す）
 @author         Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
 @homepageURL    https://github.com/book000/browser-user-customs
@@ -12,7 +12,7 @@
 
 @-moz-document domain("vault.bitwarden.com") {
   .container {
-    width: 100% !important;
+    width: 95% !important;
   }
 
   div.col-3:has(a[routerlink="/settings/subscription/premium"]) {
