@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Delete "Address" on google.com
 @namespace      tomacheese.com
-@version        1.0.0
+@version        1.1.0
 @description    Google検索結果などに表示される現在地情報を非表示にする
 @author         Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
 @homepageURL    https://github.com/book000/browser-user-customs
@@ -22,5 +22,8 @@
   }
   div[jsmodel="QPRQHf"] {
     display: none !important; /* 検索結果に関する場所情報 */
+  }
+  div.location-footer-textual {
+    display: none !important; /* Google Bard での現在地情報 */
   }
 }
