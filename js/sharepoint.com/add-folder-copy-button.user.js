@@ -4,6 +4,8 @@
 // @version      1.0.0
 // @description  SharePointでフォルダパスをコピーするボタンを追加する
 // @author       Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
+// @homepageURL  https://github.com/book000/browser-user-customs
+// @supportURL   https://github.com/book000/browser-user-customs/issues
 // @updateURL    https://raw.githubusercontent.com/book000/browser-user-customs/master/js/sharepoint.com/add-folder-copy-button.user.js
 // @downloadURL  https://raw.githubusercontent.com/book000/browser-user-customs/master/js/sharepoint.com/add-folder-copy-button.user.js
 // @match        https://*.sharepoint.com/sites/*
