@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Copy Folder Path in SharePoint Shared Documents
-// @namespace    https://tomacheese.com
+// @namespace    tomacheese.com
 // @version      1.0.0
 // @description  SharePointでフォルダパスをコピーするボタンを追加する
 // @author       Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
