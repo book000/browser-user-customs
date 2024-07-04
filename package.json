@@ -11,7 +11,7 @@
     "generate-pages": "node packages/generate-pages.js"
   },
   "dependencies": {
-    "npm-run-all2": "6.2.1",
+    "npm-run-all2": "6.2.2",
     "usercss-meta": "0.12.0",
     "userscript-parser": "2.2.2"
   }
