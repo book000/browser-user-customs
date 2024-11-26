@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy Folder Path in SharePoint Shared Documents
 // @namespace    tomacheese.com
-// @version      1.0.0
+// @version      1.1.0
 // @description  SharePointでフォルダパスをコピーするボタンを追加する
 // @author       Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
 // @homepageURL  https://github.com/book000/browser-user-customs
@@ -27,7 +27,7 @@
   const buttonElement = document.createElement("button");
   buttonElement.setAttribute("type", "button");
   buttonElement.setAttribute("data-automationid", "copyLinkCommand");
-  buttonElement.setAttribute("class", "ms-Button");
+  buttonElement.classList.add("ms-Button", "copy-folder-path-button");
   buttonElement.appendChild(iconElement);
 
   buttonElement.addEventListener("click", () => {
@@ -60,14 +60,19 @@
       });
   });
 
-  const interval = setInterval(() => {
+  setInterval(() => {
     const breadcrumbElement = document.querySelector(
       'div.Files-content div[role="presentation"] ol.ms-Breadcrumb-list li'
     );
     if (breadcrumbElement === null) {
       return;
     }
+    const isExistButton = document.querySelector(
+      'div.Files-content div[role="presentation"] button.copy-folder-path-button'
+    );
+    if (isExistButton !== null) {
+      return;
+    }
     breadcrumbElement.prepend(buttonElement);
-    clearInterval(interval);
   }, 1000);
 })();
