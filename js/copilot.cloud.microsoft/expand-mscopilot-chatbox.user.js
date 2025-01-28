@@ -6,8 +6,8 @@
 // @author       Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
 // @homepageURL  https://github.com/book000/browser-user-customs
 // @supportURL   https://github.com/book000/browser-user-customs/issues
-// @updateURL    https://raw.githubusercontent.com/book000/browser-user-customs/master/js/copilot.cloud.microsoft/remove-amazon-ads.user.js
-// @downloadURL  https://raw.githubusercontent.com/book000/browser-user-customs/master/js/copilot.cloud.microsoft/remove-amazon-ads.user.js
+// @updateURL    https://raw.githubusercontent.com/book000/browser-user-customs/master/js/copilot.cloud.microsoft/expand-mscopilot-chatbox.user.js
+// @downloadURL  https://raw.githubusercontent.com/book000/browser-user-customs/master/js/copilot.cloud.microsoft/expand-mscopilot-chatbox.user.js
 // @match        https://outlook.office.com/hosted/semanticoverview/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=copilot.cloud.microsoft
 // @grant        none
