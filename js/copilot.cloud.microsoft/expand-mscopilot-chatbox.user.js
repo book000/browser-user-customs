@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Remove max-height and max-width from chat input in Microsoft Copilot
-// @namespace    https://tomacheese.com
+// @namespace    tomacheese.com
 // @version      1.0.0
 // @description  Remove max-height and max-width from chat input in Microsoft Copilot to make it easier to read and write code in the chat input box
 // @author       Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
