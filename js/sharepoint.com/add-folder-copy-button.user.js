@@ -31,7 +31,6 @@
   buttonElement.appendChild(iconElement);
 
   buttonElement.addEventListener("click", () => {
-      //
     const folderElement = document.querySelector(
       'div.Files-content div[data-automationid="appHeader"] ol[data-automationid="breadcrumb-root-id"] li:last-child'
     );
