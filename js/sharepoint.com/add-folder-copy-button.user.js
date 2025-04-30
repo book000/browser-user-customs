@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy Folder Path in SharePoint Shared Documents
 // @namespace    tomacheese.com
-// @version      1.1.0
+// @version      1.2.0
 // @description  SharePointでフォルダパスをコピーするボタンを追加する
 // @author       Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
 // @homepageURL  https://github.com/book000/browser-user-customs
@@ -32,12 +32,12 @@
 
   buttonElement.addEventListener("click", () => {
     const folderElement = document.querySelector(
-      'div.Files-content div[role="presentation"]'
+      'div.Files-content div[data-automationid="appHeader"] ol[data-automationid="breadcrumb-root-id"] li:last-child'
     );
 
     // フォルダパスの取得
     const folderArray = JSON.parse(
-      folderElement.getAttribute("data-drop-target-key")
+      folderElement.getAttribute("data-item-key")
     );
     const rawFolderPath = folderArray.at(-1);
 
@@ -62,13 +62,13 @@
 
   setInterval(() => {
     const breadcrumbElement = document.querySelector(
-      'div.Files-content div[role="presentation"] ol.ms-Breadcrumb-list li'
+      'div.Files-content div[data-automationid="appHeader"] ol[data-automationid="breadcrumb-root-id"] li'
     );
     if (breadcrumbElement === null) {
       return;
     }
     const isExistButton = document.querySelector(
-      'div.Files-content div[role="presentation"] button.copy-folder-path-button'
+      'div.Files-content div[data-automationid="appHeader"] button.copy-folder-path-button'
     );
     if (isExistButton !== null) {
       return;
