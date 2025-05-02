@@ -1,0 +1,17 @@
+/* ==UserStyle==
+@name           Delete AI description on google.com
+@namespace      tomacheese.com
+@version        1.0.0
+@description    Google検索結果に表示されるAIの概要を非表示にする
+@author         Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
+@homepageURL    https://github.com/book000/browser-user-customs
+@supportURL     https://github.com/book000/browser-user-customs/issues
+@updateURL      https://raw.githubusercontent.com/book000/browser-user-customs/master/css/google.com/delete-search-ai.user.css
+@license        MIT License
+==/UserStyle== */
+
+@-moz-document domain("google.com") {
+  #Odp5De {
+    display: none;
+  }
+}
