@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy Folder Path in SharePoint Shared Documents
 // @namespace    tomacheese.com
-// @version      1.2.0
+// @version      1.3.0
 // @description  SharePointでフォルダパスをコピーするボタンを追加する
 // @author       Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
 // @homepageURL  https://github.com/book000/browser-user-customs
@@ -9,6 +9,7 @@
 // @updateURL    https://raw.githubusercontent.com/book000/browser-user-customs/master/js/sharepoint.com/add-folder-copy-button.user.js
 // @downloadURL  https://raw.githubusercontent.com/book000/browser-user-customs/master/js/sharepoint.com/add-folder-copy-button.user.js
 // @match        https://*.sharepoint.com/sites/*
+// @match        https://*.sharepoint.com/teams/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=sharepoint.com
 // @grant        none
 // @license      MIT
