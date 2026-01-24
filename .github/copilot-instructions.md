@@ -1,7 +1,7 @@
 # GitHub Copilot Instructions
 
 ## プロジェクト概要
-- 目的: ブラウザ拡張機能の Stylus や Tampermonkey で利用できるユーザスタイルシート / ユーザスクリプトの置き場
+Repository for browser user stylesheets and userscripts for extensions like Stylus and Tampermonkey.
 
 ## 共通ルール
 - 会話は日本語で行う。
@@ -11,8 +11,8 @@
 - 既存のプロジェクトルールがある場合はそれを優先する。
 
 ## 技術スタック
-- 言語: JavaScript
-- パッケージマネージャー: pnpm 優先（ロックファイルに従う）。
+- 言語: JavaScript, CSS
+- パッケージマネージャー: npm
 
 ## コーディング規約
 - フォーマット: 既存設定（ESLint / Prettier / formatter）に従う。
@@ -23,12 +23,20 @@
 - TypeScript 使用時は strict 前提とし、`skipLibCheck` で回避しない。
 - 関数やインターフェースには docstring（JSDoc など）を記載する。
 
-## 開発コマンド
+### 開発コマンド
 ```bash
-# 依存関係のインストール
-npm install
+# lint
+run-p lint-css lint-js
 
-# 開発 / テスト / Lint は README を確認してください
+# lint-css
+node packages/css-meta.js
+
+# lint-js
+node packages/js-meta.js
+
+# generate-pages
+node packages/generate-pages.js
+
 ```
 
 ## テスト方針
@@ -39,5 +47,11 @@ npm install
 - ログに機密情報を出力しない。
 
 ## ドキュメント更新
+- 実装確定後、同一コミットまたは追加コミットで更新する。
+- README、API ドキュメント、コメント等は常に最新状態を保つ。
 
 ## リポジトリ固有
+- **type**: User Extensions Collection
+- **purpose_detail**: Centralized storage for Stylus (CSS) and Tampermonkey (JS) scripts
+- **distribution**: GitHub Pages (https://book000.github.io/browser-user-customs/)
+- **generated_assets**: Auto-generated pages listing all user styles/scripts

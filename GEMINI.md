@@ -15,7 +15,17 @@
 - 日本語と英数字の間には半角スペースを入れる。
 
 ## プロジェクト概要
-- 目的: ブラウザ拡張機能の Stylus や Tampermonkey で利用できるユーザスタイルシート / ユーザスクリプトの置き場
+Repository for browser user stylesheets and userscripts for extensions like Stylus and Tampermonkey.
+
+### 技術スタック
+- **言語**: JavaScript, CSS
+- **フレームワーク**: Node.js
+- **パッケージマネージャー**: npm
+- **主要な依存関係**:
+  - production:
+    - npm-run-all2@8.0.4
+    - usercss-meta@0.12.0
+    - userscript-parser@2.2.2
 
 ## コーディング規約
 - フォーマット: 既存設定（ESLint / Prettier / formatter）に従う。
@@ -23,12 +33,20 @@
 - コメント言語: 日本語
 - エラーメッセージ: 英語
 
-## 開発コマンド
+### 開発コマンド
 ```bash
-# 依存関係のインストール
-npm install
+# lint
+run-p lint-css lint-js
 
-# 開発 / テスト / Lint は README を確認してください
+# lint-css
+node packages/css-meta.js
+
+# lint-js
+node packages/js-meta.js
+
+# generate-pages
+node packages/generate-pages.js
+
 ```
 
 ## 注意事項
@@ -37,3 +55,7 @@ npm install
 - 既存のプロジェクトルールがある場合はそれを優先する。
 
 ## リポジトリ固有
+- **type**: User Extensions Collection
+- **purpose_detail**: Centralized storage for Stylus (CSS) and Tampermonkey (JS) scripts
+- **distribution**: GitHub Pages (https://book000.github.io/browser-user-customs/)
+- **generated_assets**: Auto-generated pages listing all user styles/scripts

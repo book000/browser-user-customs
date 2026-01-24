@@ -25,3 +25,7 @@
 - ログに機密情報を出力しない。
 
 ## リポジトリ固有
+- **type**: User Extensions Collection
+- **purpose_detail**: Centralized storage for Stylus (CSS) and Tampermonkey (JS) scripts
+- **distribution**: GitHub Pages (https://book000.github.io/browser-user-customs/)
+- **generated_assets**: Auto-generated pages listing all user styles/scripts
