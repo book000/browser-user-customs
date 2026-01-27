@@ -67,7 +67,7 @@
 ### メタデータ必須フィールド
 
 - **CSS**: `name`, `namespace`, `version`, `homepageURL`, `supportURL`, `updateURL`, `description`, `author`, `license`
-- **JS**: 上記に加えて `downloadURL`, `match`, `grant`, `icon`
+- **JS**: `name`, `namespace`, `version`, `description`, `author`, `homepageURL`, `supportURL`, `updateURL`, `downloadURL`, `match`, `grant`, `icon`, `license`
 
 ### メタデータ固定値
 

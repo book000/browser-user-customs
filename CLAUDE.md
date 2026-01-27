@@ -41,7 +41,7 @@ Claude Code は以下の形式で判断を記録します：
 
 ## コード改修時のルール
 
-- 関数には、docstring (JSDoc など) を日本語で記載・更新する (新規作成時や大規模な変更時)
+- 関数には、docstring (JSDoc など) を日本語で記載・更新する (新規作成時や大規模な変更時のみ)
 
 ## 相談ルール
 
@@ -178,7 +178,7 @@ npm run generate-pages
 ### メタデータ必須フィールド
 
 - **CSS**: `name`, `namespace`, `version`, `homepageURL`, `supportURL`, `updateURL`, `description`, `author`, `license`
-- **JS**: 上記に加えて `downloadURL`, `match`, `grant`, `icon`
+- **JS**: `name`, `namespace`, `version`, `description`, `author`, `homepageURL`, `supportURL`, `updateURL`, `downloadURL`, `match`, `grant`, `icon`, `license`
 
 ### メタデータ固定値
 

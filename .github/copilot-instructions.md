@@ -36,7 +36,7 @@
 - 命名規則: camelCase を使用する
 - コード内コメント: 日本語で記載する
 - エラーメッセージ: 英語で記載する
-- 関数には docstring (JSDoc など) を日本語で記載する (新規作成時や大規模な変更時)
+- 関数には docstring (JSDoc など) を日本語で記載する (新規作成時や大規模な変更時のみ)
 
 ## 開発コマンド
 
@@ -80,7 +80,7 @@ npm run generate-pages
 
 - **メタデータ必須フィールド**:
   - CSS: `name`, `namespace`, `version`, `homepageURL`, `supportURL`, `updateURL`, `description`, `author`, `license`
-  - JS: 上記に加えて `downloadURL`, `match`, `grant`, `icon`
+  - JS: `name`, `namespace`, `version`, `description`, `author`, `homepageURL`, `supportURL`, `updateURL`, `downloadURL`, `match`, `grant`, `icon`, `license`
 - **メタデータ固定値**:
   - `namespace`: `tomacheese.com`
   - `author`: `Tomachi <tomachi@tomacheese.com> (https://github.com/book000)`
