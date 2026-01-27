@@ -38,7 +38,6 @@
 - **命名規則**: camelCase を使用する
 - **コード内コメント**: 日本語で記載する
 - **エラーメッセージ**: 英語で記載する
-- **関数には docstring (JSDoc など) を日本語で記載する (新規作成時や大規模な変更時のみ)**
 
 ## 開発コマンド
 
@@ -112,16 +111,6 @@ npm run generate-pages
   - `js-meta.js`: JS メタデータ検証
   - `generate-pages.js`: GitHub Pages 用のページ生成
 - `.github/workflows/`: GitHub Actions の設定
-
-### 技術スタック
-
-- **言語**: JavaScript (Node.js 24.x)
-- **パッケージマネージャー**: npm
-- **依存ライブラリ**:
-  - `usercss-meta`: ユーザスタイルシートのメタデータパーサー
-  - `userscript-parser`: ユーザスクリプトのメタデータパーサー
-  - `npm-run-all2`: npm スクリプトの並列実行
-- **CI/CD**: GitHub Actions
 
 ### 特記事項
 

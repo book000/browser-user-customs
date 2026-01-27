@@ -110,10 +110,7 @@ npm run generate-pages
 - `css/`: ユーザスタイルシート (.user.css) を格納
 - `js/`: ユーザスクリプト (.user.js) を格納
 - `packages/`: メタデータ検証とページ生成のスクリプト
+  - `css-meta.js`: CSS メタデータ検証
+  - `js-meta.js`: JS メタデータ検証
+  - `generate-pages.js`: GitHub Pages 用のページ生成
 - `.github/workflows/`: GitHub Actions の設定
-
-### 注意事項
-
-- メタデータの固定値は、CI で検証される。変更してはならない。
-- 新しいユーザスタイルシート / ユーザスクリプトを追加する場合は、対象ドメインのディレクトリを作成する。
-- GitHub Pages は自動的にファイル一覧を生成するため、手動でドキュメントを更新する必要はない。
