@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy Folder Path in SharePoint Shared Documents
 // @namespace    tomacheese.com
-// @version      1.3.0
+// @version      1.4.0
 // @description  SharePointでフォルダパスをコピーするボタンを追加する
 // @author       Tomachi <tomachi@tomacheese.com> (https://github.com/book000)
 // @homepageURL  https://github.com/book000/browser-user-customs
@@ -22,7 +22,10 @@
   iconElement.setAttribute("data-icon-name", "Link");
   iconElement.setAttribute("aria-hidden", "true");
   iconElement.setAttribute("class", "ms-Icon ms-Button-icon");
-  iconElement.setAttribute("style", "font-family: FabricMDL2Icons;");
+  iconElement.setAttribute(
+    "style",
+    "font-family: FabricMDL2Icons; font-style: normal",
+  );
   iconElement.textContent = "";
 
   const buttonElement = document.createElement("button");
@@ -33,13 +36,11 @@
 
   buttonElement.addEventListener("click", () => {
     const folderElement = document.querySelector(
-      'div.Files-content div[data-automationid="appHeader"] ol[data-automationid="breadcrumb-root-id"] li:last-child'
+      'div.Files-main div[data-automationid="appHeaderBar"] ol[data-automationid="breadcrumb-root-id"] li:last-of-type',
     );
 
     // フォルダパスの取得
-    const folderArray = JSON.parse(
-      folderElement.getAttribute("data-item-key")
-    );
+    const folderArray = JSON.parse(folderElement.getAttribute("data-item-key"));
     const rawFolderPath = folderArray.at(-1);
 
     // "Shared Documents" よりもあとが本来のパス名なので、これを取得
@@ -63,13 +64,13 @@
 
   setInterval(() => {
     const breadcrumbElement = document.querySelector(
-      'div.Files-content div[data-automationid="appHeader"] ol[data-automationid="breadcrumb-root-id"] li'
+      'div.Files-main div[data-automationid="appHeaderBar"] ol[data-automationid="breadcrumb-root-id"]',
     );
     if (breadcrumbElement === null) {
       return;
     }
-    const isExistButton = document.querySelector(
-      'div.Files-content div[data-automationid="appHeader"] button.copy-folder-path-button'
+    const isExistButton = breadcrumbElement.querySelector(
+      "button.copy-folder-path-button",
     );
     if (isExistButton !== null) {
       return;
