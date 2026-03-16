@@ -64,13 +64,13 @@
 
   setInterval(() => {
     const breadcrumbElement = document.querySelector(
-      'div[data-automationid="appHeaderBar"] ol[data-automationid="breadcrumb-root-id"]',
+      'div.Files-main div[data-automationid="appHeaderBar"] ol[data-automationid="breadcrumb-root-id"]',
     );
     if (breadcrumbElement === null) {
       return;
     }
-    const isExistButton = document.querySelector(
-      'div.Files-main div[data-automationid="appHeaderBar"] ol[data-automationid="breadcrumb-root-id"] button.copy-folder-path-button',
+    const isExistButton = breadcrumbElement.querySelector(
+      "button.copy-folder-path-button",
     );
     if (isExistButton !== null) {
       return;
