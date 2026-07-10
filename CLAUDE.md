@@ -27,7 +27,8 @@ organized by target domain and published as an index page on
 - `npm run lint-css` — `node packages/css-meta.js`.
 - `npm run lint-js` — `node packages/js-meta.js`.
 - `npm run generate-pages` — regenerate `dist/index.html`. Run in CI on push to
-  `master`; no need to commit the output.
+  `master` (the `Deploy Pages` workflow also triggers on `main`); no need to
+  commit the output.
 
 ## Metadata rules (enforced by lint — CI fails otherwise)
 
