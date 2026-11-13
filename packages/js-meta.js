@@ -127,7 +127,7 @@ function checkVersion(path, meta) {
 
   if (parentVersion !== currentVersion) {
     console.log(
-      `${path}: version updated (${currentVersion} -> ${parentVersion})`
+      `${path}: version updated (${parentVersion} -> ${currentVersion})`
     );
     return;
   }
