@@ -48,6 +48,6 @@ test("requires a version change for a modified userscript", (t) => {
   const unchanged = validate(directory, base);
   assert.notEqual(unchanged.status, 0);
   assert.match(unchanged.stderr, /version must be updated/);
-  fs.writeFileSync(file, fs.readFileSync(file, "utf8").replace("@version      1.0.1", "@version      1.0.2"));
+  fs.writeFileSync(file, fs.readFileSync(file, "utf8").replace("@version      1.0.2", "@version      1.0.3"));
   assert.equal(validate(directory, base).status, 0);
 });
